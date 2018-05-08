@@ -6,12 +6,16 @@ public class ReverseSubstring {
         char[] array = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
         int from = 2, to = 4;
 
-        System.out.print(array);
-        System.out.print(" - substring \"");
-        showSubstring(array, from, to);
-        System.out.print("\" was reversed to \"");
-        showReversedSubstring(array, from, to);
-        System.out.print("\"");
+        try {
+            System.out.print(array);
+            System.out.print(" - substring \"");
+            showSubstring(array, from, to);
+            System.out.print("\" was reversed to \"");
+            showReversedSubstring(array, from, to);
+            System.out.print("\"");
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
 
     static void showSubstring(char[] array, int from, int to) {
