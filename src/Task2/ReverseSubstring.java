@@ -4,10 +4,11 @@ public class ReverseSubstring {
     public static void main(String[] args) {
 
         char[] array = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
-        int from = -1, to = 6;
+        int from = 2, to = 4;
 
         System.out.print(array);
         showSubstring(array, from, to);
+
         showReversedSubstring(array, from, to);
         System.out.print("\"");
     }
