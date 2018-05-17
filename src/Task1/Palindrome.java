@@ -7,7 +7,7 @@ public class Palindrome {
 
         System.out.print("Enter a word to check: ");
         String string = new Scanner(System.in).next();
-
+        
         String result = palindromeDetection(string);
         System.out.println(result);
     }
