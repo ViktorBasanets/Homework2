@@ -7,12 +7,12 @@ public class Palindrome {
 
         System.out.print("Enter a word to check: ");
         String string = new Scanner(System.in).next();
-        
-        String result = palindromeDetection(string);
+
+        String result = palindromeDetector(string);
         System.out.println(result);
     }
 
-    private static String palindromeDetection(String string) {
+    private static String palindromeDetector(String string) {
 
         String temp = "";
         for(int i = string.length() - 1; i >= 0; i--) {

@@ -5,43 +5,27 @@ public class ReverseSubstring {
 
         char[] array = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
         int from = 2, to = 4;
+        System.out.println(array);
 
-        System.out.print(array);
-        showSubstring(array, from, to);
-
-        showReversedSubstring(array, from, to);
-        System.out.print("\"");
+        reverse(array, from, to);
+        System.out.println(array);
     }
 
-    private static void showSubstring(char[] array, int from, int to) {
-
-        if(from < 0 || from > to || to >= array.length) {
-
-            System.out.println();
-            System.err.println("Error: Outside the array!\n" +
-                    "Array boundaries: (0, " + (array.length - 1) + ")");
-            System.exit(-1);
-        }
-
-        System.out.print(" - substring \"");
-        for(int i = from; i <= to; i++) {
-            System.out.print(array[i]);
+    private static void reverse(char[] array, int from, int to) {
+        checkOutOfBoundsArray(array, from, to);
+        for(int i = from, j = to; i < j; i++, j--) {
+            char temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
         }
     }
 
-    private static void showReversedSubstring(char[] array,
-                                      int from, int to) {
-        if(from < 0 || from > to || to >= array.length) {
+    private static void checkOutOfBoundsArray(char[] array, int from, int to) {
 
-            System.out.println();
-            System.err.println("Error: Outside the array!\n" +
+        if(from < 0 || from > to || to >= array.length) {
+            System.err.println("\nError: Outside the array!\n" +
                     "Array boundaries: (0, " + (array.length - 1) + ")");
             System.exit(-1);
-        }
-
-        System.out.print("\" was reversed to \"");
-        for(int i = to; i >= from; i--) {
-            System.out.print(array[i]);
         }
     }
 }
