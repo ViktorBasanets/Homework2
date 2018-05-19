@@ -12,20 +12,17 @@ public class ReverseSubstring {
     }
 
     private static void reverse(char[] array, int from, int to) {
-        checkOutOfBoundsArray(array, from, to);
-        for(int i = from, j = to; i < j; i++, j--) {
-            char temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
-        }
-    }
-
-    private static void checkOutOfBoundsArray(char[] array, int from, int to) {
 
         if(from < 0 || from > to || to >= array.length) {
             System.err.println("\nError: Outside the array!\n" +
                     "Array boundaries: (0, " + (array.length - 1) + ")");
-            System.exit(-1);
+            return;
+        }
+
+        for(int i = from, j = to; i < j; i++, j--) {
+            char temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
         }
     }
 }
